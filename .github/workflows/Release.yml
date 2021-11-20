@@ -106,7 +106,7 @@ jobs:
   publish:
     name: Create-Release
     runs-on: ubuntu-latest
-    needs: [publish-legacy-512x, publish-legacy-256x, publish-legacy-128x, publish-legacy-64x, publish-lab-512x, publish-lab-256x, publish-lab-128x, publish-lab-64x]
+    needs: [publish-oldPbr-512x, publish-oldPbr-256x, publish-oldPbr-128x, publish-labPbr-512x, publish-labPbr-256x, publish-labPbr-128x]
     steps:
       - uses: actions/checkout@v2
       - name: Download Mosque-OldPbr-512x
