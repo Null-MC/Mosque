@@ -1,3 +1,5 @@
+color:
+  bake-occlusion: false
 height:
   shift: -0.6
   scale: 0.4
