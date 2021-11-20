@@ -1,0 +1,198 @@
+name: Release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version Number.'
+        required: true
+
+jobs:
+  publish-oldPbr-512x:
+    name: Publish OldPbr 512x
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker pull null511/pixelgraph
+      - name: Publish Mosque-OldPbr-512x
+        run: |
+          docker run --name pixelgraph --rm --mount src="$(pwd)",target=/content,type=bind null511/pixelgraph \
+            publish -p "//content/src/Mosque-OldPbr-512x.pack.yml" -z "//content/Mosque-OldPbr-512x.zip"
+      - name: Upload Mosque-OldPbr-512x
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mosque-OldPbr-512x
+          path: Mosque-OldPbr-512x.zip
+
+  publish-oldPbr-256x:
+    name: Publish OldPbr 256x
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker pull null511/pixelgraph
+      - name: Publish Mosque-OldPbr-256x
+        run: |
+          docker run --name pixelgraph --rm --mount src="$(pwd)",target=/content,type=bind null511/pixelgraph \
+            publish -p "//content/src/Mosque-OldPbr-256x.pack.yml" -z "//content/Mosque-OldPbr-256x.zip"
+      - name: Upload Mosque-OldPbr-256x
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mosque-OldPbr-256x
+          path: Mosque-OldPbr-256x.zip
+
+  publish-oldPbr-128x:
+    name: Publish OldPbr 128x
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker pull null511/pixelgraph
+      - name: Publish Mosque-OldPbr-128x
+        run: |
+          docker run --name pixelgraph --rm --mount src="$(pwd)",target=/content,type=bind null511/pixelgraph \
+            publish -p "//content/src/Mosque-OldPbr-128x.pack.yml" -z "//content/Mosque-OldPbr-128x.zip"
+      - name: Upload Mosque-OldPbr-128x
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mosque-OldPbr-128x
+          path: Mosque-OldPbr-128x.zip
+
+  publish-labPbr-512x:
+    name: Publish LabPbr 512x
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker pull null511/pixelgraph
+      - name: Publish Mosque-LabPbr-512x
+        run: |
+          docker run --name pixelgraph --rm --mount src="$(pwd)",target=/content,type=bind null511/pixelgraph \
+            publish -p "//content/src/Mosque-LabPbr-512x.pack.yml" -z "//content/Mosque-LabPbr-512x.zip"
+      - name: Upload Mosque-LabPbr-512x
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mosque-LabPbr-512x
+          path: Mosque-LabPbr-512x.zip
+
+  publish-labPbr-256x:
+    name: Publish LabPbr-256x
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker pull null511/pixelgraph
+      - name: Publish Mosque-LabPbr-256x
+        run: |
+          docker run --name pixelgraph --rm --mount src="$(pwd)",target=/content,type=bind null511/pixelgraph \
+            publish -p "//content/src/Mosque-LabPbr-256x.pack.yml" -z "//content/Mosque-LabPbr-256x.zip"
+      - name: Upload Mosque-LabPbr-256x
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mosque-LabPbr-256x
+          path: Mosque-LabPbr-256x.zip
+
+  publish-labPbr-128x:
+    name: Publish LabPbr-128x
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker pull null511/pixelgraph
+      - name: Publish Mosque-LabPbr-128x
+        run: |
+          docker run --name pixelgraph --rm --mount src="$(pwd)",target=/content,type=bind null511/pixelgraph \
+            publish -p "//content/src/Mosque-LabPbr-128x.pack.yml" -z "//content/Mosque-LabPbr-128x.zip"
+      - name: Upload Mosque-LabPbr-128x
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mosque-LabPbr-128x
+          path: Mosque-LabPbr-128x.zip
+          
+  publish:
+    name: Create-Release
+    runs-on: ubuntu-latest
+    needs: [publish-legacy-512x, publish-legacy-256x, publish-legacy-128x, publish-legacy-64x, publish-lab-512x, publish-lab-256x, publish-lab-128x, publish-lab-64x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download Mosque-OldPbr-512x
+        uses: actions/download-artifact@v2
+        with:
+          name: Mosque-OldPbr-512x
+      - name: Download Mosque-OldPbr-256x
+        uses: actions/download-artifact@v2
+        with:
+          name: Mosque-OldPbr-256x
+      - name: Download Mosque-OldPbr-128x
+        uses: actions/download-artifact@v2
+        with:
+          name: Mosque-OldPbr-128x
+      - name: Download Mosque-LabPbr-512x
+        uses: actions/download-artifact@v2
+        with:
+          name: Mosque-LabPbr-512x
+      - name: Download Mosque-LabPbr-256x
+        uses: actions/download-artifact@v2
+        with:
+          name: Mosque-LabPbr-256x
+      - name: Download Mosque-LabPbr-128x
+        uses: actions/download-artifact@v2
+        with:
+          name: Mosque-LabPbr-128x
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ github.event.inputs.version }}
+          release_name: Release ${{ github.event.inputs.version }}
+          #draft: true
+      - name: Upload Mosque-OldPbr-512x
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Mosque-OldPbr-512x.zip
+          asset_name: Mosque-OldPbr-512x.zip
+          asset_content_type: application/zip
+      - name: Upload Mosque-OldPbr-256x
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Mosque-OldPbr-256x.zip
+          asset_name: Mosque-OldPbr-256x.zip
+          asset_content_type: application/zip
+      - name: Upload Mosque-OldPbr-128x
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Mosque-OldPbr-128x.zip
+          asset_name: Mosque-OldPbr-128x.zip
+          asset_content_type: application/zip
+      - name: Upload Mosque-LabPbr-512x
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Mosque-LabPbr-512x.zip
+          asset_name: Mosque-LabPbr-512x.zip
+          asset_content_type: application/zip
+      - name: Upload Mosque-LabPbr-256x
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Mosque-LabPbr-256x.zip
+          asset_name: Mosque-LabPbr-256x.zip
+          asset_content_type: application/zip
+      - name: Upload Mosque-LabPbr-128x
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Mosque-LabPbr-128x.zip
+          asset_name: Mosque-LabPbr-128x.zip
+          asset_content_type: application/zip

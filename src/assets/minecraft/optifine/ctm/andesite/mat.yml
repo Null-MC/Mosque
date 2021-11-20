@@ -1,0 +1,15 @@
+height:
+  shift: -0.2
+  scale: 0.5
+  edge-fade-x: 1
+  edge-fade-y: 1
+rough:
+  shift: 0.2
+f0:
+  value: 0.06
+ctm:
+  method: of-repeat
+  width: 2
+  height: 2
+  match-tiles: andesite
+  placeholder: true
