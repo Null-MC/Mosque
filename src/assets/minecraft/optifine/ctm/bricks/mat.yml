@@ -2,7 +2,7 @@ color:
   bake-occlusion: false
 height:
   shift: -0.6
-  scale: 0.4
+  scale: 0.2
   edge-fade-x: 0.3
   edge-fade-y: 0.3
 normal:

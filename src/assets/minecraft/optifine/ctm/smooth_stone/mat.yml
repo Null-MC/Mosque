@@ -1,0 +1,24 @@
+height:
+  shift: -0.3
+  scale: 0.15
+  edge-fade-x: 1
+  edge-fade-y: 1
+normal:
+  noise: 2
+f0:
+  value: 0.05
+porosity:
+  value: 0.3
+ctm:
+  method: of-repeat
+  width: 2
+  height: 2
+  match-tiles: smooth_stone
+  placeholder: true
+filters:
+- name: default
+  tile: true
+  normal-curve-x: 90
+  normal-curve-y: 90
+  normal-radius-x: 0.06
+  normal-radius-y: 0.06

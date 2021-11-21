@@ -1,6 +1,6 @@
 height:
   shift: -0.2
-  scale: 0.5
+  scale: 0.3
   edge-fade-x: 1
   edge-fade-y: 1
 rough:
@@ -11,5 +11,5 @@ ctm:
   method: of-repeat
   width: 2
   height: 2
-  match-tiles: andesite
+  match-tiles: granite
   placeholder: true
