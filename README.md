@@ -7,7 +7,8 @@ Based on the [Nasir-ol-Molk Mosque](https://en.wikipedia.org/wiki/Nasir-ol-Molk_
   + depth: 10%
 
 ### Block Mappings
-- prismarine_bricks: blue floor tiles
-- bricks: yellowish mortared bricks
-- andesite: blue and white mosaic
-- granite: orange and brown mosaic
+- prismarine_bricks: blue floor tiles.
+- bricks: yellowish mortared bricks.
+- andesite: magenta and white plaster wall.
+- diorite: red, blue, yellow & white flower-like plaster wall.
+- granite: orange and brown plaster wall.
