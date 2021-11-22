@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "half=top": {
+      "model": "block/quartz_pillar_end",
+      "x": 180
+    },
+    "half=bottom": {
+      "model": "block/quartz_pillar_end"
+    }
+  }
+}

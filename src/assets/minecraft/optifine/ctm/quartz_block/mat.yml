@@ -1,0 +1,13 @@
+height:
+  scale: 0.08
+  auto-level: true
+rough:
+  scale: 2
+f0:
+  value: 0.035
+ctm:
+  type: of-repeat
+  count-x: 2
+  count-y: 2
+  match-tiles: quartz_block
+  placeholder: true
