@@ -1,0 +1,47 @@
+{
+	"ambientOcclusion": true,
+	"textures": {
+		"all": "block/quartz_pillar",
+		"particle": "block/quartz_pillar"
+	},
+	"elements": [
+		{
+			"name": "North-South",
+			"from": [4.685, 0, 0],
+			"to": [11.315, 16, 16],
+			"faces": {
+				"north": {"uv": [8, 0, 16, 16], "texture": "#all"},
+				"south": {"uv": [8, 0, 16, 16], "texture": "#all"}
+			}
+		},
+		{
+			"name": "West-East",
+			"from": [0, 0, 4.685],
+			"to": [16, 16, 11.315],
+			"faces": {
+				"east": {"uv": [8, 0, 16, 16], "texture": "#all"},
+				"west": {"uv": [8, 0, 16, 16], "texture": "#all"}
+			}
+		},
+		{
+			"name": "NE-SW",
+			"from": [0, 0, 4.685],
+			"to": [16, 16, 11.315],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 8, 16], "texture": "#all"},
+				"west": {"uv": [0, 0, 8, 16], "texture": "#all"}
+			}
+		},
+		{
+			"name": "NW-SE",
+			"from": [4.685, 0, 0],
+			"to": [11.315, 16, 16],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 8, 16], "texture": "#all"},
+				"south": {"uv": [0, 0, 8, 16], "texture": "#all"}
+			}
+		}
+	]
+}

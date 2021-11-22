@@ -1,0 +1,22 @@
+height:
+  shift: -0.5
+  scale: 0.8
+  edge-fade-x: 1
+normal:
+  curve-x: 180
+  radius-x: 0.2
+occlusion:
+  z-bias: 0.5
+  z-scale: 12
+smooth:
+  scale: 0.5
+f0:
+  value: 0.05
+porosity:
+  value: 0.45
+ctm:
+  method: of-repeat
+  width: 4
+  height: 4
+  match-tiles: quartz_pillar
+  placeholder: true

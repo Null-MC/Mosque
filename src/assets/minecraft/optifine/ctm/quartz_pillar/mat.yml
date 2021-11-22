@@ -1,21 +1,32 @@
 height:
-  shift: -0.5
-  scale: 0.2
-  edge-fade-x: 1
-  edge-fade-y: 1
+  value: 0
+  scale: 0.36
 normal:
-  curve-x: 90
+  noise: 3
+  method: sobel9
 occlusion:
-  scale: 0.7
+  step-distance: 0.03
+  z-bias: 0.2
+  z-scale: 26
 smooth:
-  scale: 0.6
+  scale: 0.7
 f0:
   value: 0.05
 porosity:
-  value: 0.6
+  value: 0.45
 ctm:
   method: of-repeat
   width: 2
   height: 2
   match-tiles: quartz_pillar
   placeholder: true
+filters:
+- name: left
+  width: 0.5
+  tile: true
+  normal-curve-x: 45
+- name: right
+  left: 0.5
+  width: 0.5
+  tile: true
+  normal-curve-x: 45
