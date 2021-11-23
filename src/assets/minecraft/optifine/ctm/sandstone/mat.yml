@@ -1,0 +1,13 @@
+height:
+  value: 0
+  auto-level: false
+f0:
+  value: 0.05
+porosity:
+  value: 0.15
+ctm:
+  method: of-repeat
+  width: 2
+  height: 2
+  match-tiles: sandstone sandstone_top
+  placeholder: true
