@@ -1,0 +1,27 @@
+wrap-x: false
+wrap-y: false
+model: acacia_door
+blend-mode: transparent
+height:
+  value: 0.2
+  auto-level: false
+  edge-fade-x: 1
+  edge-fade-y: 1
+occlusion:
+  step-distance: 0.04
+smooth:
+  value: 0.85
+f0:
+  value: 0.04
+ctm: {}
+parts:
+- name: top
+  left: 0
+  top: 0
+  width: 512
+  height: 512
+- name: bottom
+  left: 0
+  top: 512
+  width: 512
+  height: 512

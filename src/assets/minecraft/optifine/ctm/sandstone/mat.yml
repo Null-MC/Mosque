@@ -1,6 +1,11 @@
 height:
   value: 0
   auto-level: false
+normal:
+  noise: 1.2
+smooth:
+  shift: -0.2
+  scale: 1.8
 f0:
   value: 0.05
 porosity:
@@ -9,5 +14,5 @@ ctm:
   method: of-repeat
   width: 2
   height: 2
-  match-tiles: sandstone sandstone_top
+  match-tiles: sandstone sandstone_top sandstone_bottom
   placeholder: true

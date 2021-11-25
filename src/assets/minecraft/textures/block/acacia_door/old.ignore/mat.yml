@@ -1,0 +1,25 @@
+publish-item: true
+wrap-x: false
+wrap-y: false
+blend-mode: cutout
+height:
+  auto-level: true
+  edge-fade-y: 0.5
+occlusion:
+  step-distance: 0.04
+f0:
+  value: 0.04
+porosity:
+  value: 0.5
+ctm: {}
+parts:
+- name: acacia_door_top
+  left: 0
+  top: 0
+  width: 512
+  height: 512
+- name: acacia_door_bottom
+  left: 0
+  top: 512
+  width: 512
+  height: 512

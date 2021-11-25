@@ -3,6 +3,9 @@ height:
   scale: 0.25
   edge-fade-x: 1
   edge-fade-y: 1
+smooth:
+  shift: -0.05
+  scale: 2
 rough:
   shift: 0.2
 f0:

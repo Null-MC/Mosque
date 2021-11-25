@@ -13,7 +13,7 @@ ctm:
   method: of-repeat
   width: 2
   height: 2
-  match-tiles: stone
+  match-tiles: stone smooth_stone
   placeholder: true
 filters:
 - name: default

@@ -1,0 +1,11 @@
+publish-item: true
+wrap-x: false
+wrap-y: false
+blend-mode: transparent
+height:
+  auto-level: true
+occlusion:
+  step-distance: 0.04
+f0:
+  value: 0.04
+ctm: {}
