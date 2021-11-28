@@ -9,10 +9,9 @@ occlusion:
   z-bias: 0.2
   z-scale: 26
 smooth:
-  shift: 0.2
-  scale: 0.8
+  shift: 0.06
 f0:
-  value: 0.05
+  value: 0.07
 porosity:
   value: 0.45
 ctm:

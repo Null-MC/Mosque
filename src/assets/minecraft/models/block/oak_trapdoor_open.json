@@ -1,0 +1,31 @@
+{
+	"textures": {
+		"particle": "block/acacia_trapdoor",
+		"texture": "block/acacia_trapdoor",
+		"wood": "block/acacia_wood"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 13],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 16, 16, 0], "texture": "#texture"},
+				"east": {"uv": [0, 3, 16, 0], "rotation": 90, "texture": "#wood", "cullface": "east"},
+				"south": {"uv": [0, 16, 16, 0], "texture": "#texture", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 3], "rotation": 90, "texture": "#wood", "cullface": "west"},
+				"down": {"uv": [0, 0, 16, 3], "texture": "#wood", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 16, 13],
+			"to": [16, 32, 16],
+			"faces": {
+				"north": {"uv": [0, 16, 16, 0], "texture": "#wood", "cullface": "up"},
+				"east": {"uv": [0, 3, 16, 0], "rotation": 90, "texture": "#wood", "cullface": "up"},
+				"south": {"uv": [0, 16, 16, 0], "texture": "#wood", "cullface": "up"},
+				"west": {"uv": [0, 0, 16, 3], "rotation": 90, "texture": "#wood", "cullface": "up"},
+				"up": {"uv": [0, 3, 16, 0], "texture": "#wood", "cullface": "up"}
+			}
+		}
+	]
+}

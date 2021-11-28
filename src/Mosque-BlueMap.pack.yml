@@ -1,0 +1,28 @@
+edition: java
+format: 7
+name: Mosque-BlueMap
+description: This version for BlueMap only
+tags: ''
+encoding:
+  format: color
+  enable-palette: true
+  opacity: {}
+  color-red: {}
+  color-green: {}
+  color-blue: {}
+  height: {}
+  occlusion: {}
+  normal-x: {}
+  normal-y: {}
+  normal-z: {}
+  specular: {}
+  smooth: {}
+  rough: {}
+  metal: {}
+  f0: {}
+  porosity: {}
+  sss: {}
+  emissive: {}
+texture-size: 64
+auto-generate-normal: false
+bake-occlusion-to-color: true

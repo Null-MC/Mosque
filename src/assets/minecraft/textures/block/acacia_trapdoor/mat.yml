@@ -1,6 +1,7 @@
 publish-item: true
 wrap-x: false
 wrap-y: false
+model: oak_trapdoor_open
 blend-mode: transparent
 height:
   auto-level: true
